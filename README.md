@@ -1,0 +1,1 @@
+Sistema desarrollado con Laravel 12, InertiaJs y Vue 3 Implementando Spatie Permissions
