@@ -1,7 +1,186 @@
+@import 'datatables.net-dt';
+
+@import 'dataTables.tailwindcss';
+@import '@bhplugin/vue3-datatable/dist/style.css';
+
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 [x-cloak] {
     display: none;
 }
+
+/* Botones Globales con Tailwind */
+
+/* Clase base para todos los botones */
+    .btn {
+        @apply inline-flex items-center justify-center 
+            rounded-md border border-transparent
+            font-medium shadow-sm 
+            transition-all duration-200 ease-in-out
+            focus:outline-none focus:ring-2 focus:ring-offset-2
+            disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+
+    /* Tamaños de botones */
+    .btn-xs {
+        @apply px-2.5 py-1.5 text-xs;
+    }
+    
+    .btn-sm {
+        @apply px-3 py-2 text-sm;
+    }
+    
+    .btn-md {
+        @apply px-4 py-2 text-base;
+    }
+    
+    .btn-lg {
+        @apply px-6 py-3 text-lg;
+    }
+    
+    .btn-xl {
+        @apply px-8 py-4 text-xl;
+    }
+
+    /* Variantes de color */
+    .btn-primary {
+        @apply bg-blue-600 text-white hover:bg-blue-700 
+            focus:ring-blue-500;
+    }
+    
+    .btn-secondary {
+        @apply bg-gray-200 text-gray-800 hover:bg-gray-300 
+            focus:ring-gray-500;
+    }
+    
+    .btn-success {
+        @apply bg-green-600 text-white hover:bg-green-700 
+            focus:ring-green-500;
+    }
+    
+    .btn-danger {
+        @apply bg-red-600 text-white hover:bg-red-700 
+            focus:ring-red-500;
+    }
+    
+    .btn-warning {
+        @apply bg-yellow-500 text-white hover:bg-yellow-600 
+            focus:ring-yellow-500;
+    }
+    
+    .btn-info {
+        @apply bg-cyan-500 text-white hover:bg-cyan-600 
+            focus:ring-cyan-500;
+    }
+
+    .btn-dark {
+        @apply bg-gray-800 text-white hover:bg-gray-900 
+            focus:ring-gray-500;
+    }
+
+    .btn-gray {
+        @apply bg-gray-200 text-gray-800 hover:bg-gray-300 
+            focus:ring-gray-500;
+    }
+
+    /* Variante outline */
+    .btn-outline {
+        @apply bg-transparent border border-current;
+    }
+    
+    .btn-outline-primary {
+        @apply btn-outline text-blue-600 hover:bg-blue-50 
+            focus:ring-blue-500;
+    }
+    
+    /* Variante ghost (sin fondo ni borde) */
+    .btn-ghost {
+        @apply bg-transparent hover:bg-gray-100 shadow-none;
+    }
+
+    /* Botón con icono */
+    .btn-icon {
+        @apply p-2 rounded-full;
+    }
+
+    /* Botón con sombra más pronunciada */
+    .btn-accent {
+    @apply btn bg-purple-600 text-white hover:bg-purple-700 
+            focus:ring-purple-500 shadow-md;
+    }
+
+    /* Botón con gradiente */
+    .btn-gradient {
+    @apply btn bg-gradient-to-r from-blue-500 to-cyan-400 
+            text-white hover:from-blue-600 hover:to-cyan-500;
+    }
+
+
+
+.btn-group-init {
+    @apply px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white;
+}
+    
+.btn-group-mid {
+    @apply px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white;
+}
+.btn-group-end {
+    @apply px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white;
+}
+
+
+
+    .span-success {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800;
+    }
+
+    .span-danger {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800;
+    }
+
+    .text-heading {
+        @apply text-3xl font-bold text-gray-900;
+    }
+
+    .text-subheading {
+        @apply text-xl font-semibold text-gray-800;
+    }
+
+    .text-body {
+        @apply text-base text-gray-700 leading-relaxed;
+    }
+
+    .text-link {
+        @apply text-blue-600 hover:text-blue-800 underline;
+    }
+
+    .card {
+        @apply bg-white rounded-lg shadow p-4;
+    }
+
+    .container {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+
+
+    .input {
+        @apply border border-gray-300 rounded-md py-2 px-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500;
+    }
+
+    .label {
+        @apply block text-sm font-medium text-gray-700;
+    }
+
+    .error-message {
+        @apply text-red-500 text-sm mt-1;
+    }
+
